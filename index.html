@@ -2,12 +2,16 @@
 <head>
 	<title>Laba po WEB</title>
     <link rel="stylesheet" href="style/style.css" />                                     <!--подключение таблицы стилей-->
-    <script type="text/javascript" src="javascript/jquery2.0.3.js"></script> <!--подключение библиотеки-->
+    <script type="text/javascript" src="javascript/jquery2.0.3.js"></script>             <!--подключение библиотеки-->
     <script type="text/javascript" src="javascript/jquery.nicescroll.min.js"></script>   <!--подключение библиотеки-->
     <script type="text/javascript" src="javascript/function.js"></script>                <!--подключение файла кода разработки (будет переподключен на .min)-->
 </head>
 <body>
+					<!--  МЕНЮ: НАЧАЛО  -->
+
+	<!--  Блок меню первого уровня: начало  -->
     <div class="menu">
+    
         <ul class="top_menu">
             <li id="top_menu_btn_1" class="pos active_pos"><a href="#">Pos1</a></li>
             <li id="top_menu_btn_2" class="pos"><a href="#">Pos2</a></li>
@@ -17,34 +21,50 @@
             <li id="top_menu_btn_signin" class="left_top_menu signin"><a href="#">SIGN IN</a><img id="signin_img" src="img/signin_arrow_down.png"></li>
         </ul>
     </div>
-        
+    <!--  Блок меню первого уровня: конец  -->
+     
+    <!--  Блок меню второго уровня: начало  -->   
     <div id="navigation" class="navigation">
         <ul id="top_navigation_1" class="top_navigation">
-            <li><a href="#">my info</a></li>
+            <li><a href="#">my info   </a></li>
             <li><a href="#">to do list</a></li>
-            <li><a href="#">calendar</a></li>
-            <li><a href="#">shadule</a></li>
-            <li><a href="#">convertor</a></li>
+            <li><a href="#">calendar  </a></li>
+            <li><a href="#">shadule   </a></li>
+            <li><a href="#">convertor </a></li>
          </ul>
          
          <ul id="top_navigation_2" class="top_navigation" style="display: none;">
-            <li><a href="#">my info2</a></li>
+            <li><a href="#">my info2   </a></li>
             <li><a href="#">to do list2</a></li>
-            <li><a href="#">calendar2</a></li>
-            <li><a href="#">shadule2</a></li>
-            <li><a href="#">convertor2</a></li>
+            <li><a href="#">calendar2  </a></li>
+            <li><a href="#">shadule2   </a></li>
+            <li><a href="#">convertor2 </a></li>
          </ul>
          
          <ul id="top_navigation_3" class="top_navigation" style="display: none;">
-            <li><a href="#">my info3</a></li>
+            <li><a href="#">my info3   </a></li>
             <li><a href="#">to do list3</a></li>
-            <li><a href="#">calendar3</a></li>
-            <li><a href="#">shadule3</a></li>
-            <li><a href="#">convertor3</a></li>
+            <li><a href="#">calendar3  </a></li>
+            <li><a href="#">shadule3   </a></li>
+            <li><a href="#">convertor3 </a></li>
          </ul>
-         <img class="icons" src="img/setting.png">
+         <img id="setting" class="setting" src="img/setting.png"><!--  Кнопка вывода настроек  --> 
+         
+          
+         <ul id="setting_block" class="setting_block">
+       	   <li style="height: 10px;"></li>
+           <li><img src="img/star.png" href="">  </li>
+           <li><img src="img/charts.png" href=""></li>
+           <li><img src="img/save.png" href="">  </li>
+           <li><img src="img/wrench.png" href=""></li>
+           <li><img src="img/exit.png" href="">  </li>
+       </ul>     
        </div>
+        <!--  Блок меню второго уровня: конец  -->
        
+     
+       
+       <!--  Блок регистрации/входа: начало  -->   
        <div id="registration_signin" class="registration_signin">
        	   <form action="#">
                <p class="form_header">REGISTRATION</p>
@@ -64,12 +84,12 @@
                
                <p class="form_header">SOCIAL</p>
                <div class="registration_block">
-                    <img class="soc_icon" src="icon/f.png"   onMouseOver="this.src='icon/f_act.png'" onMouseOut="this.src='icon/f.png'">
-                    <img class="soc_icon" src="icon/g.png"   onMouseOver="this.src='icon/g_act.png'" onMouseOut="this.src='icon/g.png'" >
+                    <img class="soc_icon" src="icon/f.png"   onMouseOver="this.src='icon/f_act.png'"   onMouseOut="this.src='icon/f.png'"  >
+                    <img class="soc_icon" src="icon/g.png"   onMouseOver="this.src='icon/g_act.png'"   onMouseOut="this.src='icon/g.png'"  >
                     <img class="soc_icon" src="icon/rss.png" onMouseOver="this.src='icon/rss_act.png'" onMouseOut="this.src='icon/rss.png'">
-                    <img class="soc_icon" src="icon/t.png"   onMouseOver="this.src='icon/t_act.png'" onMouseOut="this.src='icon/t.png'">
-                    <img class="soc_icon" src="icon/B.png"   onMouseOver="this.src='icon/B_act.png'" onMouseOut="this.src='icon/B.png'">
-                    <img class="soc_icon" src="icon/ok.png"  onMouseOver="this.src='icon/ok_act.png'"onMouseOut="this.src='icon/ok.png'">
+                    <img class="soc_icon" src="icon/t.png"   onMouseOver="this.src='icon/t_act.png'"   onMouseOut="this.src='icon/t.png'"  >
+                    <img class="soc_icon" src="icon/B.png"   onMouseOver="this.src='icon/B_act.png'"   onMouseOut="this.src='icon/B.png'"  >
+                    <img class="soc_icon" src="icon/ok.png"  onMouseOver="this.src='icon/ok_act.png'"  onMouseOut="this.src='icon/ok.png'" >
                </div>
                
                <div class="line"></div>
@@ -82,8 +102,21 @@
                <p class="form_header" style="float: right; right: 50px;"">SIGN IN</p>
            </form>
        </div>
+       <!--  Блок регистрации/входа: конец    -->
        
+       <!--  Блок списка настроек: начало     -->
+       
+       <!--  Блок списка настроек: конец      -->
+       
+       								<!--  МЕНЮ: КОНЕЦ  -->
+                                    
+                                  <!--  КОНТЕНТ: НАЧАЛО  -->
+       
+       <!--  Блок основного контента: начало  -->
        <div id="content" class="content">
        </div>
+       <!--  Блок основного контента: конец   -->
+       
+                                  <!--  КОНТЕНТ: КОНЕЦ   -->
 </body>
 </html>

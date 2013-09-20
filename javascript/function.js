@@ -1,7 +1,7 @@
 /*Конфигурация*/
 	var i = 0; //счётчик кликов (итераций) для меню signin
 	var j = 0; //индикатор положения меню второго уровня 0 - меню не убранно
-	var s = 0; //
+	var s = 0; //индикатор положения меню настроек
 
 /*Настройка скроллбара*/
 $(document).ready(function() {    
@@ -36,10 +36,12 @@ $(document).ready(function(){
 				}
 			} else {
 	            $('#navigation').css('position','relative');
+				
             }
 	     });
 	});
 });
+
 /*события click для пунктов меню первого уровня(для каждого  в отдельности)*/
 /*не используем првязку к наборам для сохранения гибкости кода*/
 $(document).ready(function() {
@@ -100,7 +102,9 @@ $(document).ready(function() {
 				$('#navigation').css('top','-90px');
 				$('#registration_signin').css('top','-50px');
 				$('#signin_img').css('opacity','1');
-				j = 1; //регистрационная форма активна
+				$('#setting_block').css('right','-46px'); //меню настроек убираем за экран
+				if(s%2 === 1) { s++; }                    //проброс счётчика при скрытие настроек за экран
+				j = 1;                                    //регистрационная форма активна
 				i++;
 				end();
 			}
@@ -113,6 +117,20 @@ $(document).ready(function() {
 				i++;
 				end();
 				}
+		});
+		/*вывод меню настроек*/
+		$('#setting').click(function() {
+			if(s%2 === 0) {
+				$('#setting_block').css('right','0px');
+				s++;
+				end();
+			}
+			if(s%2 === 1) {
+				$('#setting_block').css('right','-46px');
+				s++;
+				end();
+			}
+			
 		});
 	});
 });
