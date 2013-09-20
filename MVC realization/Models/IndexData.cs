@@ -7,8 +7,32 @@ namespace Organaizer.Models
 {
     public class IndexData
     {
-        public Logon logon { get; set; }
+        private Logon Logon = new Logon();
+        
+        public Logon PLogon 
+        { 
+            get 
+            {
+                return Logon;
+            }
+            set
+            {
+                Logon = value;
+            }
+        }
 
-        public Registration registration { get; set; }
+        private Registration Registration = new Registration();
+
+        public Registration PRegistration
+        {
+            get
+            {
+                return Registration;
+            }
+            set
+            {
+                Registration = value;
+            }
+        }
     }
 }

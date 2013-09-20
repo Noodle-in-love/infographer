@@ -3,12 +3,7 @@
 @{
     Layout = null;
 }
-@using System.Data;
-@using System.Data.Sql;
-@using System.Data.SqlClient;
-@using System.Data.SqlTypes;
-@using System.Security.Cryptography;
-@using System.Text;
+
 
 <!DOCTYPE html>
 
@@ -20,65 +15,7 @@
 <body>
     <div>
         @{
-            
-                SqlConnection con = new SqlConnection("Data Source = (local); Initial Catalog = WebDB; Integrated Security=true;");
-                con.Open();
-                
-                MD5 crypt = MD5.Create();
-             
-                 byte[] bytes = Encoding.Unicode.GetBytes(Model.logon.JoinPassword);
-             
-                 byte[] cryptBytes = crypt.ComputeHash(bytes);
-             
-                 String hash = "";
-             
-                 foreach (byte b in cryptBytes){   
-                    hash += string.Format("{0:x2}", b);  
-                 }
-             
-                SqlCommand command = new SqlCommand("SELECT Login, Password FROM Users WHERE Login = '" + Model.logon.JoinLogin + "' and Password = '" + hash + "';",con);
-                
-                command.CommandType = CommandType.Text;
-                
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.TableMappings.Add("Table", "Users");
-                adapter.SelectCommand = command;
-                
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-
-                if (ds.Tables[0].Rows.Count == 0)
-                {
-                    command.CommandText = "SELECT EMail, Password FROM Users WHERE Login = '" + Model.logon.JoinLogin + "' and Password = '" + hash + "';";
-
-                    adapter.SelectCommand = command;
-
-                    adapter.Fill(ds);
-
-                    if (ds.Tables[0].Rows.Count == 0)
-                    {
-                        @Html.Display("Incorrect login/e-mail or password")
-                    }
-                    else
-                    {
-                        command.CommandText = "SELECT Login FROM Users WHERE EMail = '" + Model.logon.JoinLogin + "';";
-
-                        adapter.SelectCommand = command;
-
-                        adapter.Fill(ds);
-                        
-                        Model.logon.JoinLogin = ds.Tables[0].Rows[0][0].ToString();
-                        
-                        @Html.Display("Hello, " + Model.logon.JoinLogin+"!")
-                    }
-                }
-                else{
-                    String name = ds.Tables[0].Rows[0][1].ToString();
-                    @Html.TextBox("123", (object)name)
-                }
-                con.Close();
-            
-            <!--    <h1>SHIP HAPPENS!</h1>-->
+             @Html.TextBox("123", (object)"Hello, " + Session["Login"].ToString() + "!")
         }
     </div>
 </body>

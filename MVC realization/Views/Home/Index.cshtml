@@ -58,15 +58,15 @@
        <div id="registration_signin" class="registration_signin">
                    @using (Html.BeginForm())
                    {
-                   //    @Html.ValidationSummary()
+                     //  @Html.ValidationSummary()
                        <p class="form_header">REGISTRATION</p>
                        <div class="registration_block">
                            <p class="form_text">Your username </p>
-                           @Html.TextBoxFor(y => y.registration.Login)
+                           @Html.TextBoxFor(y => y.PRegistration.Login)
                             <br />
                            <p class="form_text">Your e-mail</p> 
 
-                           @Html.TextBoxFor(y => y.registration.Email)
+                           @Html.TextBoxFor(y => y.PRegistration.Email)
 
                         </div>
                        
@@ -74,10 +74,10 @@
                        
                         <div class="registration_block">
                            <p class="form_text">Your password</p>
-                           @Html.PasswordFor(y => y.registration.Password)
+                           @Html.PasswordFor(y => y.PRegistration.Password)
                            <br />
                            <p class="form_text">Repeat your password </p>
-                           @Html.PasswordFor(y => y.registration.ConfirmPassword)
+                           @Html.PasswordFor(y => y.PRegistration.ConfirmPassword)
                           <input type="submit" value="Submit" />
                         </div>
                     }
@@ -96,11 +96,12 @@
                
                <div class="line"></div>
                @using(Html.BeginForm()){
-               <div class="registration_block" style="float: right; right: 50px;">                   
+                 //  @Html.ValidationSummary()
+                    <div class="registration_block" style="float: right; right: 50px;">                   
                    <p class="form_text">Your username or e-mail</p>
-                   @Html.TextBoxFor(y => y.logon.JoinLogin)<br>
+                   @Html.TextBoxFor(y => y.PLogon.JoinLogin)<br>
                    <p class="form_text">Your password</p>
-                   @Html.PasswordFor(y => y.logon.JoinPassword)
+                   @Html.PasswordFor(y => y.PLogon.JoinPassword)
                    <input type="submit" value="JoinIn!" />
                </div>
                }
