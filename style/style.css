@@ -53,7 +53,7 @@ body {
 				 /*Вывод границы над пунктом меню при наведении(для всез 3-х вариантов)*/
 				ul.top_menu  li.pos:hover     { border-top: 5px solid #09F; padding-top: 9px; }
 				ul.top_menu  li.signin:hover  { border-top: 5px solid #F60; padding-top: 9px; }
-				ul.top_menu  li.join:hover { border-top: 5px solid #6C6; padding-top: 9px; }
+				ul.top_menu  li.join:hover    { border-top: 5px solid #6C6; padding-top: 9px; }
 				 /*индивидуальные классы для пунктов меню*/
 				 .pos, .signin, .join  {  transition: border-color 0.4s; }
 				 /*стили стрелочки сбоку "входа"*/
@@ -82,7 +82,7 @@ body {
 				   /*создание класса active, применяемого  к элементу списка, если он находится  в активном состоянии */
 				  ul.top_menu li.active_pos     { padding-top: 9px; border-top: 5px solid #09F; }
 				  ul.top_menu li.active_signin  { padding-top: 9px; border-top: 5px solid #F60; }
-				  ul.top_menu li.active_join { padding-top: 9px; border-top: 5px solid #6C6; }
+				  ul.top_menu li.active_join    { padding-top: 9px; border-top: 5px solid #6C6; }
 				  ul.top_menu li.active_pos a, ul.top_menu li.active_signin a, ul.top_menu li.active_join a { opacity: 1; }
 	/*стили второго уровня навигации*/
 	div.navigation {
@@ -103,11 +103,11 @@ body {
 			float: left;
 				margin-right: 50px;
 			}
-		.icons {
-			position:relative;
+		.setting {
+			position: relative;
 			float: right;
 			top: 2px;
-			right: 10px;
+			right: 5px;
 			width: 35px;
 			height: 35px;
 			
@@ -214,6 +214,38 @@ body {
 			
 			cursor: pointer;
 			}
+	/*стили меню настроек*/
+	ul.setting_block {
+		position: absolute;
+		float: none;
+		display: block;
+		top: 40px;
+		right: -46px;
+			margin: 0px;
+			padding: 0px;
+		width: 45px;
+		height: auto;
+		
+		box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Параметры тени */
+		border-radius: 0px 0px 0px 10px;
+		transition: all 0.2s;
+		z-index: 3000;
+		}
+		ul.setting_block li {
+			background: #CCC;
+			
+			position: relative;
+			float: none;
+			display: block;
+				margin: 0px;
+				padding: 0px;
+			width: 100%;
+			height: 45px;
+			}
+			ul.setting_block li img {
+				margin-left: 6px;
+				width: 70%;
+				}
 			/*блок контента(наполнения)*/
 	div.content {
 		position: relative;
