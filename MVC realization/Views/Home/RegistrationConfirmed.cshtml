@@ -1,0 +1,55 @@
+﻿@model Organaizer.Models.IndexData
+
+@{
+    Layout = null;
+}
+@using System;
+@using System.Security.Cryptography;
+@using System.Data;
+@using System.Data.Sql;
+@using System.Data.SqlClient;
+@using System.Data.SqlTypes;
+@using System.Text;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegistrationConfirmed</title>
+</head>
+<body>
+    <div>
+        @{
+         try{
+             SqlConnection con = new SqlConnection("Data Source = (local); Initial Catalog = WebDB; Integrated Security=true;");
+             con.Open();
+             MD5 crypt = MD5.Create();
+             
+             byte[] bytes = Encoding.Unicode.GetBytes(Model.registration.Password);
+             
+             byte[] cryptBytes = crypt.ComputeHash(bytes);
+             
+             String hash = "";
+            <a href="~/Views/">~/Views/</a>
+             foreach (byte b in cryptBytes){   
+                hash += string.Format("{0:x2}", b);  
+             }
+             
+             String query = "INSERT INTO Users ( Login, Password, EMail) VALUES ('" + Model.registration.Login + "', '" + hash + "', '" + Model.registration.Email + "');";
+             
+             SqlCommand command = new SqlCommand(query, con);
+             command.CommandType = CommandType.Text;
+             command.CommandText = query;
+             command.ExecuteNonQuery();
+             
+             con.Close();
+             <h1>Success!</h1>
+         }
+         catch{
+             <p>Sorry, but you have failed.</p>
+         }   
+        }
+    </div>
+</body>
+</html>

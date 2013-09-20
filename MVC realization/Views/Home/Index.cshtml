@@ -1,0 +1,114 @@
+﻿@model Organaizer.Models.IndexData
+@{
+    Layout = null;
+}
+ 
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+	<title>Laba po WEB</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />     <!--подключение таблицы стилей-->
+
+    <script type="text/javascript" src="~/Content/jquery2.0.3.js"></script> <!--подключение библиотеки-->
+    <script type="text/javascript" src="~/Content/jquery.nicescroll.min.js"></script>   <!--подключение библиотеки-->
+    <script type="text/javascript" src="~/Content/function.js"></script>                <!--подключение файла кода разработки (будет переподключен на .min)-->
+</head>
+
+<body>
+    <div class="menu">
+        <ul class="top_menu">
+            <li id="top_menu_btn_1" class="pos active_pos"><a href="#">Pos1</a></li>
+            <li id="top_menu_btn_2" class="pos"><a href="#">Pos2</a></li>
+            <li id="top_menu_btn_3" class="pos"><a href="#">Pos3</a></li>
+       
+            <li class="left_top_menu join"><a href="#">JOIN</a></li>
+            <li id="top_menu_btn_signin" class="left_top_menu signin"><a href="#">SIGN IN</a><img id="signin_img" src="D:\WEB\www\img\img.png"></li>
+        </ul>
+    </div>
+        
+    <div id="navigation" class="navigation">
+        <ul id="top_navigation_1" class="top_navigation">
+            <li><a href="#">my info</a></li>
+            <li><a href="#">to do list</a></li>
+            <li><a href="#">calendar</a></li>
+            <li><a href="#">shedule</a></li>
+            <li><a href="#">convertor</a></li>
+         </ul>
+         
+         <ul id="top_navigation_2" class="top_navigation" style="display: none;">
+            <li><a href="#">my info2</a></li>
+            <li><a href="#">to do list2</a></li>
+            <li><a href="#">calendar2</a></li>
+            <li><a href="#">shedule2</a></li>
+            <li><a href="#">convertor2</a></li>
+         </ul>
+         
+         <ul id="top_navigation_3" class="top_navigation" style="display: none;">
+            <li><a href="#">my info3</a></li>
+            <li><a href="#">to do list3</a></li>
+            <li><a href="#">calendar3</a></li>
+            <li><a href="#">shedule3</a></li>
+            <li><a href="#">convertor3</a></li>
+         </ul>
+         <img class="icons" src="D:\WEB\www\icon\setting.png">
+       </div>
+       <div id="registration_signin" class="registration_signin">
+                   @using (Html.BeginForm())
+                   {
+                   //    @Html.ValidationSummary()
+                       <p class="form_header">REGISTRATION</p>
+                       <div class="registration_block">
+                           <p class="form_text">Your username </p>
+                           @Html.TextBoxFor(y => y.registration.Login)
+                            <br />
+                           <p class="form_text">Your e-mail</p> 
+
+                           @Html.TextBoxFor(y => y.registration.Email)
+
+                        </div>
+                       
+                        <div class="line"></div>
+                       
+                        <div class="registration_block">
+                           <p class="form_text">Your password</p>
+                           @Html.PasswordFor(y => y.registration.Password)
+                           <br />
+                           <p class="form_text">Repeat your password </p>
+                           @Html.PasswordFor(y => y.registration.ConfirmPassword)
+                          <input type="submit" value="Submit" />
+                        </div>
+                    }
+           <!--<form action="#">-->
+               <div class="line"></div>
+               
+               <p class="form_header">SOCIAL</p>
+               <div class="registration_block">
+                    <img class="soc_icon" src="D:\WEB\www\icon\f.png"   onMouseOver="this.src='D:\WEB\www\icon\f_act.png'" onMouseOut="this.src='D:\WEB\www\icon\f.png'">
+                    <img class="soc_icon" src="D:\WEB\www\icon\g.png"   onMouseOver="this.src='D:\WEB\www\icon\g_act.png'" onMouseOut="this.src='D:\WEB\www\icon\g.png'" >
+                    <img class="soc_icon" src="D:\WEB\www\icon\rss.png" onMouseOver="this.src='D:\WEB\www\icon\rss_act.png'" onMouseOut="this.src='D:\WEB\www\icon\rss.png'">
+                    <img class="soc_icon" src="D:\WEB\www\icon\t.png"   onMouseOver="this.src='D:\WEB\www\icon\t_act.png'" onMouseOut="this.src='D:\WEB\www\icon\t.png'">
+                    <img class="soc_icon" src="D:\WEB\www\icon\B.png"   onMouseOver="this.src='D:\WEB\www\icon\B_act.png'" onMouseOut="this.src='D:\WEB\www\icon\B.png'">
+                    <img class="soc_icon" src="D:\WEB\www\icon\ok.png"  onMouseOver="this.src='D:\WEB\www\icon\ok_act.png'"onMouseOut="this.src='D:\WEB\www\icon\ok.png'">
+               </div>
+               
+               <div class="line"></div>
+               @using(Html.BeginForm()){
+               <div class="registration_block" style="float: right; right: 50px;">                   
+                   <p class="form_text">Your username or e-mail</p>
+                   @Html.TextBoxFor(y => y.logon.JoinLogin)<br>
+                   <p class="form_text">Your password</p>
+                   @Html.PasswordFor(y => y.logon.JoinPassword)
+                   <input type="submit" value="JoinIn!" />
+               </div>
+               }
+               <p class="form_header" style="float: right; right: 50px;"">SIGN IN</p>
+           <!--</form>-->
+       </div>
+       
+       <div id="content" class="content">
+       </div>
+</body>
+</html>
