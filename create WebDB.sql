@@ -112,3 +112,7 @@ CREATE TABLE CountryCurrency(
 	FOREIGN KEY (CurrencyID) REFERENCES Currency,
 	FOREIGN KEY (CountryID) REFERENCES Country
 	);
+	 create table City
+	 (CityID Int primary key,
+	 Name Char(30) not null)
+	 ;
